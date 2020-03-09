@@ -72,3 +72,10 @@
 .baguetteBox-button {
     background-color: transparent !important;
 }
+
+.photo-cart {
+position: absolute;
+top: 35%;
+left: 35%;
+display: none;
+}
