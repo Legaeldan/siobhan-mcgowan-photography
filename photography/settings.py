@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('IP'),
-                 'https://siobhan-mcgowan-photography.herokuapp.com/']
+                 'siobhan-mcgowan-photography.herokuapp.com']
 
 
 # Application definition
