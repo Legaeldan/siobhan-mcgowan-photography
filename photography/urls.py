@@ -19,9 +19,11 @@ from home import urls as urls_home
 from home.views import index
 from photos.views import all_photos
 from photos import urls as urls_photos
+from search import urls as urls_search
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='index'),
     url(r'^portfolio/', include(urls_photos)),
+    url(r'^search/', include(urls_search)),
 ]
