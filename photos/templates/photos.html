@@ -5,13 +5,16 @@
 <div class="card-columns">
         {% for photo in photos %}
 <div class="card text-center">
-    <a href="#">
+
        <img src="{{ MEDIA_URL }}{{ photo.image }}" alt="{{ photo.name }}">
        <div class="card-img-overlay">
             <h5 class="card-title">{{ photo.name }}</h5>
             <p class="card-text">{{ photo.description }}</p>
-          </div>
-    </a>
+            <a href="#">
+            <button type="button" class="btn btn-success">More Info</button>
+        </a>
+        </div>
+
 
 </div>
 {% endfor %} 
