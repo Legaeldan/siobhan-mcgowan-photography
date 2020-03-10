@@ -4,10 +4,13 @@
 <div class="container gallery-container">        
 <div class="card-columns">
         {% for photo in photos %}
-<div class="card">
+<div class="card text-center">
     <a href="#">
-        <img src="{{ MEDIA_URL }}{{ photo.image }}" alt="{{ photo.name }}">
-      
+       <img src="{{ MEDIA_URL }}{{ photo.image }}" alt="{{ photo.name }}">
+       <div class="card-img-overlay">
+            <h5 class="card-title">{{ photo.name }}</h5>
+            <p class="card-text">{{ photo.description }}</p>
+          </div>
     </a>
 
 </div>
