@@ -10,7 +10,7 @@
        <div class="card-img-overlay">
             <h5 class="card-title">{{ photo.name }}</h5>
             <p class="card-text">{{ photo.description }}</p>
-            <a href="#">
+            <a href="{% url 'photo_detail' photo.id %}">
             <button type="button" class="btn btn-success">More Info</button>
         </a>
         </div>
