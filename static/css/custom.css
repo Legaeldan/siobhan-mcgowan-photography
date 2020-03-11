@@ -13,3 +13,7 @@
 .card-img-overlay:hover {
   opacity: 0.75;
 }
+
+#photo-details {
+  margin: auto;
+}
