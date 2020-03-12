@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Photo
-from watermarker.models import Watermark
 
 # Create your views here.
 def all_photos(request):
