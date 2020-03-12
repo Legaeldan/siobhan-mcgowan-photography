@@ -19,7 +19,7 @@ def add_to_cart(request, id):
 def adjust_cart(request, id):
     """
     Adjust the quantity of the specified product to the specified
-    amount
+    amount.
     """
     print(request.POST)
     cart = request.session.get('cart', {})
