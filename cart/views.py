@@ -25,4 +25,6 @@ def remove_from_cart(request, id):
     cart.pop(id)
     print(cart)
     request.session['cart'] = cart
+    if not cart:
+        return redirect(reverse('index'))
     return redirect(reverse('view_cart'))
