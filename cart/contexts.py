@@ -10,10 +10,11 @@ def cart_contents(request):
     cart = request.session.get('cart', {})
     cart_items = []
     total = 0
+    photo_count = 0
     print(total)
     for id, quantity in cart.items():
         photo = get_object_or_404(Photo, pk=id)
         total += photo.price
+        photo_count += 1
         cart_items.append({'id': id, 'photo': photo})
-    
-    return {'cart_items': cart_items, 'total': total}
+    return {'cart_items': cart_items, 'total': total, 'photo_count': photo_count}
