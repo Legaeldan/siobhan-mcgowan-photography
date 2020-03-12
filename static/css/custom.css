@@ -22,6 +22,23 @@
  width: 100%;
 }
 
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+.cart-row-item {
+  border-radius: 3px;
+  transition: .5s ease;
+}
+
+
+.cart-row-item:hover {
+  background-color: grey;
+}
 
 @media (min-width: 768px) {
   .carousel-multi-item-2 .col-md-3 {
