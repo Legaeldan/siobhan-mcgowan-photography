@@ -44,6 +44,10 @@ a:hover {
   padding: 0;
 }
 
+.photo-details-form {
+  display: inline-block;
+}
+
 @media (min-width: 768px) {
   .carousel-multi-item-2 .col-md-3 {
   float: left;
