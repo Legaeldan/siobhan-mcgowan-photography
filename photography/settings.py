@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'home',
     'cart',
     'storages',
+    'watermarker',
 ]
 
 MIDDLEWARE = [
