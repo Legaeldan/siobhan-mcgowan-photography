@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
+{% load watermark %}
 
 {% block content %}
 <div class="container">
@@ -25,7 +26,15 @@
         </div>
         <div class="col-sm-2">
                 <p><i class="fas fa-euro-sign"></i>{{ item.photo.price }}</p>
-        </div>
+                <form class="photo-details-form"method="post" action="{% url 'remove_from_cart' item.photo.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger" type="submit"><i class="fas fa-times"></i> Remove</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
     </div>  
     </a>
 {% if forloop.last %}
