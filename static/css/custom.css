@@ -17,3 +17,26 @@
 #photo-details {
   margin: auto;
 }
+
+@media (min-width: 768px) {
+  .carousel-multi-item-2 .col-md-3 {
+  float: left;
+  width: 25%;
+  max-width: 100%; } }
+  
+  .carousel-multi-item-2 .card img {
+  border-radius: 2px; }
+
+  .controls-top {
+    text-align: center;
+    margin: 1.33rem 0;
+}
+
+.carousel-inner .active {
+  display: flex;
+}
+
+.carousel {
+  border: 1px solid #cccccc;
+  border-radius: 16px;
+}
