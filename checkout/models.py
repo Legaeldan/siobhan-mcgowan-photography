@@ -1,4 +1,5 @@
 from django.db import models
+from photos.models import Photo
 
 # Create your models here.
 class Order(models.Model):
@@ -14,3 +15,13 @@ class Order(models.Model):
 
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
+
+
+class OrderLineItem(models.Model):
+    order = models.ForeignKey(Order, null=False)
+    photo = models.ForeignKey(Photo, null=False)
+
+    def __str__(self):
+        return "{0} @ {1}".format(
+            self.photo.name, self.photo.price)
+
