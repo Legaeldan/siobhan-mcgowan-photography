@@ -18,8 +18,12 @@
   margin: auto;
 }
 
-.photo-cart {
+.photo-cart, .photo-checkout {
  width: 100%;
+}
+
+#checkout hr {
+  margin: 0;
 }
 
 a {
