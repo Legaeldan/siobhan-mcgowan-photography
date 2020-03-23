@@ -22,6 +22,8 @@ def checkout(request):
         if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
             order.date = timezone.now()
+            order.user_name = request.user.username
+            order.email = request.user.email
             order.save()
             
             cart = request.session.get('cart', {})

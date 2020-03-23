@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect, reverse
+from django.contrib.auth.models import User
 
 # Create your views here.
 def view_cart(request):
     """A View that renders the cart contents page"""
+    print(request.user.is_authenticated)
+    print(request.user.email)
     return render(request, "cart.html")
 
 def add_to_cart(request, id):
@@ -14,6 +17,7 @@ def add_to_cart(request, id):
         cart[id] = cart.get(id) 
 
     request.session['cart'] = cart
+    print(cart)
     return redirect(reverse('view_cart'))
 
 def remove_from_cart(request, id):

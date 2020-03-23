@@ -5,6 +5,8 @@ from photos.models import Photo
 class Order(models.Model):
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
+    user_name = models.CharField(max_length=120, blank=True)
+    email = models.CharField(max_length=120, blank=True)
     country = models.CharField(max_length=40, blank=False)
     postcode = models.CharField(max_length=20, blank=True)
     town_or_city = models.CharField(max_length=40, blank=False)
@@ -14,7 +16,7 @@ class Order(models.Model):
     date = models.DateField()
 
     def __str__(self):
-        return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
+        return "{0} - {1} - {2} - {3}".format(self.id, self.date, self.user_name, self.email)
 
 
 class OrderLineItem(models.Model):
