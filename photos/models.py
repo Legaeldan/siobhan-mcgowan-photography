@@ -23,6 +23,7 @@ class Photo(models.Model):
     previewimage = models.ImageField(upload_to='images/preview', blank=True)
     featured = models.BooleanField(default=False)
     active = models.BooleanField(default=True)
+    banner = models.BooleanField(default=False)
 
 
     def __str__(self):
