@@ -1,13 +1,14 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
+from django.contrib import messages, auth
 from .forms import MakePaymentForm, OrderForm
 from .models import OrderLineItem
 from django.conf import settings
+from django.core.mail import send_mail, EmailMessage
 from django.utils import timezone
 from photos.models import Photo
 import stripe
-
+import requests
 
 # Create your views here.
 
@@ -49,7 +50,24 @@ def checkout(request):
                 
             if customer.paid:
                 messages.error(request, "You have successfully paid")
+                subject = 'Thank you for your order SMG Photography to our site'
+                message = "Thank you %s for your order with SMG Photography." \
+                          " " \
+                          "Please find attached your digital prints." % (request.user.username)
+                from_email = settings.EMAIL_HOST_USER
+                recipient_list = [request.user.email]
+                print(request.user.email)
+                email = EmailMessage(subject, message, from_email , recipient_list)
+                for id, quantity in cart.items():
+                    photo = get_object_or_404(Photo, pk=id)
+                    response = requests.get(settings.MEDIA_URL+str(photo.image))                
+                    print(photo.image)
+                    email.attach(photo.name, response.content,mimetype="image/jpg")
+                email.send()
+                    
                 request.session['cart'] = {}
+
+
                 return redirect(reverse('photos'))
             else:
                 messages.error(request, "Unable to take payment")
