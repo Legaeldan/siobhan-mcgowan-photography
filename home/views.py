@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from photos.models import Photo
 from .models import Review
 from django.core.mail import send_mail
@@ -12,8 +12,13 @@ def index(request):
     """A view that displays the index page"""
     photos = Photo.objects.all()
     reviews = Review.objects.all()
-    return render(request, "index.html", {"photos": photos, "reviews": reviews})
-
+    try:
+        pre_banner = Photo.objects.filter(banner=True)
+        banner = get_object_or_404(Photo, pk=pre_banner)
+        return render(request, "index.html", {"photos": photos, "reviews": reviews, "banner":banner})
+    except:
+        return render(request, "index.html", {"photos": photos, "reviews": reviews})
+   
 def contact(request):
     """A simple contact page for users to contact the photographer"""
     contact_form = ContactForm()
