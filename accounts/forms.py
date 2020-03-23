@@ -16,10 +16,10 @@ class UserLoginForm(forms.Form):
 class UserRegistrationForm(UserCreationForm):
     username = forms.CharField(
         label='', 
-        widget=forms.PasswordInput(attrs={'placeholder': 'Username'}))
+        widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     email = forms.CharField(
         label='', 
-        widget=forms.PasswordInput(attrs={'placeholder': 'Email Address'}))
+        widget=forms.TextInput(attrs={'placeholder': 'Email Address'}))
     password1 = forms.CharField(
         label='', 
         widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
