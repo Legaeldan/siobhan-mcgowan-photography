@@ -1,7 +1,51 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row banner-container">
+<section class="bg-primary background-multiply pt240 pb240 pt-xs-120 pb-xs-120 overlay image-bg parallax">
+    <div class="background-image-holder fadeIn"
+        style="transform: translate3d(0px, 0px, 0px); background: url({{ MEDIA_URL }}Lough_Melvin_at_sunset.jpg);">
+        <img alt="image" class="background-image" src="{{ MEDIA_URL }}Lough_Melvin_at_sunset.jpg" style="display: none;">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                <h2 class="brand-title">SIOBHAN <span>MCGOWAN</span> PHOTOGRAPHY</h2>
+                <h4 class="mb56 mb-xs-24">
+                    Capturing all your precious moments, one frame at a time
+                </h4>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+<section class="portfolio-pullup">
+        <div class="container">
+            <div class="row row-gapless masonry masonryFlyIn">
+                {% for photo in photos %}
+                {% if photo.featured %}
+                <div class="col-md-4 col-sm-6 masonry-item project" data-filter="People">
+                    <div class="image-tile inner-title hover-reveal text-center">
+                        <a href="{% url 'photo_detail' photo.id %}">
+                            <img alt="Pic" src="{{ MEDIA_URL }}{{ photo.previewimage }}" />
+                            <div class="title">
+                                <h5 class="uppercase mb0">{{ photo.name }}</h5>
+                                <span>{{ photo.category }}</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+        <div class="bg-load"></div>
+        <div class="loader"></div>
+    </section>
+<!--<div class="row banner-container">
 <img class="d-block w-100" src="{{ MEDIA_URL }}Lough_Melvin_at_sunset.jpg"
     alt="Siobhan McGowan Photography">
     <div class="banner-overlay text-center">
@@ -36,7 +80,7 @@
 
                             <div class="col-md-3 mb-3 my-auto">
                                 <div class="card text-center">
-                                    <img class="img-fluid" src="{{ MEDIA_URL }}{{ photo.image }}" alt="Card image cap">
+                                    <img class="img-fluid" src="{{ MEDIA_URL }}{{ photo.previewimage }}" alt="Card image cap">
                                     <div class="card-img-overlay">
                                         <h5 class="card-title">{{ photo.name }}</h5>
                                         <p class="card-text">{{ photo.description }}</p>
@@ -58,5 +102,5 @@
             </div>
         </div>
 
-
-    {% endblock %}
+    -->
+{% endblock %}
