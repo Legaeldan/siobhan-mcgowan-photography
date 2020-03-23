@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from photos.models import Photo
+from .models import Review
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
@@ -9,7 +10,8 @@ from django.core.urlresolvers import reverse
 def index(request):
     """A view that displays the index page"""
     photos = Photo.objects.all()
-    return render(request, "index.html", {"photos": photos})
+    reviews = Review.objects.all()
+    return render(request, "index.html", {"photos": photos}, {"reviews": reviews})
 
 def contact(request):
     """A simple contact page for users to contact the photographer"""
