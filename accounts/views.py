@@ -35,9 +35,10 @@ def login(request):
                 else:
                     return redirect(reverse('index'))
             else:
-                user_form.add_error(None, "Your username or password are incorrect")
+                messages.error(request, "Your username or password are incorrect")
     else:
         user_form = UserLoginForm()
+        user_form.auto_id = False
 
     args = {'user_form': user_form, 'next': request.GET.get('next', '')}
     return render(request, 'login.html', args)
