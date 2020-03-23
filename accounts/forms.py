@@ -5,14 +5,27 @@ from django.core.exceptions import ValidationError
 
 
 class UserLoginForm(forms.Form):
-    username_or_email = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    username_or_email = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Username'}))
+    password = forms.CharField(label="",widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+
+    def __init__(self, *args, **kwargs):
+        super(UserLoginForm, self).__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'mb0'
 
 class UserRegistrationForm(UserCreationForm):
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
+    username = forms.CharField(
+        label='', 
+        widget=forms.PasswordInput(attrs={'placeholder': 'Username'}))
+    email = forms.CharField(
+        label='', 
+        widget=forms.PasswordInput(attrs={'placeholder': 'Email Address'}))
+    password1 = forms.CharField(
+        label='', 
+        widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
     password2 = forms.CharField(
-        label='Password Confirmation',
-        widget=forms.PasswordInput
+        label='',
+        widget=forms.PasswordInput(attrs={'placeholder': 'Password Confirmation'})
     )
 
     class Meta:
