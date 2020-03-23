@@ -42,8 +42,36 @@
             <!--end of row-->
         </div>
         <!--end of container-->
-        <div class="bg-load"></div>
-        <div class="loader"></div>
+
+    </section>
+
+    <section class="pt0 pb180 pt-xs-80 pb-xs-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <h3 class="mb48 mb-xs-32">Some reviews from some amazing clients we've had the pleasure of working with.</h3>
+                    <div class="text-slider slider-paging-controls text-center relative">
+                        <ul class="slides">
+                            {% for review in reviews %}
+                            {% if review.featured %}
+                            <li>
+
+                                <h5>{{ review.description }}</h5>
+                                <i class="ti-medall"></i>
+                                <div class="quote-author">
+                                    <h6 class="uppercase mb0">{{ review.name }}</h6>
+                                    <span>{{ review.company }}</span>
+                                </div>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
     </section>
 <!--<div class="row banner-container">
 <img class="d-block w-100" src="{{ MEDIA_URL }}Lough_Melvin_at_sunset.jpg"
