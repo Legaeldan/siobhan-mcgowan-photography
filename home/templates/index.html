@@ -3,7 +3,11 @@
 {% block content %}
 <section class="bg-primary background-multiply pt240 pb240 pt-xs-120 pb-xs-120 overlay image-bg parallax">
     <div class="background-image-holder fadeIn">
-        <img alt="image" class="background-image" src="https://siobhan-mcgowan-photography.s3.amazonaws.com/media/images/preview/Murvagh_Beach.jpg" style="display: none;">
+        {% if banner %}
+        <img alt="{{ banner.name }}" class="background-image" src="{{ MEDIA_URL }}{{ banner.image }}" style="display: none;">
+        {% else %}
+        <img alt="error" class="background-image">
+        {% endif %}
     </div>
     <div class="container">
         <div class="row">
