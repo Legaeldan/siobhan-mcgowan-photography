@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
 from django.core.urlresolvers import reverse
+from .forms import ContactForm
 
 # Create your views here.
 def index(request):
@@ -15,6 +16,7 @@ def index(request):
 
 def contact(request):
     """A simple contact page for users to contact the photographer"""
+    contact_form = ContactForm()
     if request.method == 'POST':
         subject = 'Thank you for contacting SMG Photography to our site'
         form_name = request.POST['user_name']
@@ -30,7 +32,7 @@ def contact(request):
         send_mail(subject, message, from_email , recipient_list)
         messages.success(request, 'You message was sent successfully. We will be in touch shortly')
         
-        return redirect(reverse('contact'))
+        return redirect(reverse('contact', {"contact_form": contact_form}))
 
 
-    return render(request, "contact.html")
+    return render(request, "contact.html", {"contact_form": contact_form})
