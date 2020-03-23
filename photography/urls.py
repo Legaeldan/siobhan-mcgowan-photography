@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import urls as urls_accounts
 from home import urls as urls_home
-from home.views import index
+from home.views import index, contact
 from photos.views import all_photos
 from photos import urls as urls_photos
 from cart import urls as urls_cart
@@ -26,7 +26,7 @@ from checkout import urls as urls_checkout
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index, name='index'),
+    url(r'^', include(urls_home)),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^portfolio/', include(urls_photos)),
     url(r'^search/', include(urls_search)),
