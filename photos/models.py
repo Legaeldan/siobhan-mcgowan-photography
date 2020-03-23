@@ -20,6 +20,7 @@ class Photo(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     published_date = models.DateTimeField(blank=True, default=timezone.now)
     image = models.ImageField(upload_to='images')
+    previewimage = models.ImageField(upload_to='images/preview')
     featured = models.BooleanField(default=False)
     active = models.BooleanField(default=True)
 
