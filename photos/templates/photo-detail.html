@@ -1,8 +1,77 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<section class="page-title page-title-4 bg-secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="uppercase mb0">{{ photo.name }}</h3>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+<section>
+    <div class="container">
+        <div class="product-single">
+            <div class="row mb24 mb-xs-48">
+                <div class="col-md-5 col-sm-6">
+
+
+                        <div class="lightbox-grid square-thumbs" data-gallery-title="Gallery">
+                                <ul>
+                                    <li>
+                                        <a href="{{ MEDIA_URL }}{{ photo.previewimage }}" data-lightbox="Gallery">
+                                            <div class="background-image-holder fadeIn" style="background: url(&quot;img/cover1.jpg&quot;);">
+                                                <img alt="image" class="background-image" src="{{ MEDIA_URL }}{{ photo.previewimage }}" style="display: none;">
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                                  
+
+                    <!--end of image slider-->
+                </div>
+                <div class="col-md-5 col-md-offset-1 col-sm-6">
+                    <div class="description">
+                        <h4 class="uppercase">Logan - Sturdy Canvas Black Backpack</h4>
+                        <div class="mb32 mb-xs-24">
+                            <span class="number price">€{{ photo.price }}</span>
+                        </div>
+                        <p>
+                            {{ photo.description }}
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>SKU:</strong> {{ photo.id }}</li>
+                            <li>
+                                <strong>SIZE (W x H):</strong> {{ photo.previewimage.width }} X {{ photo.previewimage.height }}</li>
+                        </ul>
+                    </div>
+                    <hr class="mb48 mb-xs-24">
+                    <form class="add-to-cart" method="post" action="{% url 'add_to_cart' photo.id %}">
+                           {% csrf_token %}
+                        <input type="submit" value="Add To Cart">
+                    </form>
+                </div>
+            </div>
+            <!--end of row-->
+
+        </div>
+        <!--end of product single-->
+    </div>
+    <!--end of container-->
+</section>
+
+
+<!--
     <div class="row">
        <div class="col-xs-10 offset-xs-1 col-lg-6">
-            <img id="product-image" src="{{ MEDIA_URL }}{{ photo.image }}" />
+            <img id="product-image" src="{{ MEDIA_URL }}{{ photo.previewimage }}" />
         </div>
         <div id="photo-details" class="col-xs-10 offset-xs-1 col-lg-6 text-center">
             <h2>
@@ -14,7 +83,7 @@
             </div>
             <h4>Dimensions</h4>
             <div>
-                    {{ photo.image.width }} X {{ photo.image.height }}
+                    {{ photo.previewimage.width }} X {{ photo.previewimage.height }}
             </div>
             <form class="photo-details-form"method="post" action="{% url 'add_to_cart' photo.id %}">
                 {% csrf_token %}
@@ -27,5 +96,5 @@
 
         
          
-
+        -->
 {% endblock %}
