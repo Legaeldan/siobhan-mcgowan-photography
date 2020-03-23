@@ -12,6 +12,10 @@ th {
     font-weight: 400;
 }
 
+.slides i {
+    font-size: 7rem;
+}
+
 .order-total {
     color: goldenrod;
 }
@@ -35,7 +39,8 @@ th {
 	top: 0px;
 	width: 100%;
 	height: 100%;
-	background: rgba(219, 216, 216, 0.9);
+    background: rgba(219, 216, 216, 0.9);
+    z-index: 4;
 }
 
 .loader {
@@ -50,6 +55,7 @@ th {
     margin-top: -100px;
     margin-left: -100px;
     animation: spin 2s linear infinite;
+    z-index: 5;
 }
   
   @keyframes spin {
