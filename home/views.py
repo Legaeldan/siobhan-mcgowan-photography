@@ -14,7 +14,8 @@ def index(request):
     reviews = Review.objects.all()
     try:
         pre_banner = Photo.objects.filter(banner=True)
-        banner = get_object_or_404(Photo, pk=pre_banner)
+        for image in pre_banner:
+            banner = get_object_or_404(Photo, pk=image.id)
         return render(request, "index.html", {"photos": photos, "reviews": reviews, "banner":banner})
     except:
         return render(request, "index.html", {"photos": photos, "reviews": reviews})
