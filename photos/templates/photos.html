@@ -1,46 +1,41 @@
 {% extends 'base.html' %}
 
-{% block content %}       
-<div class="card-columns">
-        {% for photo in photos %}
-<div class="card text-center">
+{% block content %}
+<section class="projects pt48">
+    <div class="container">
 
-       <img src="{{ MEDIA_URL }}{{ photo.image }}" alt="{{ photo.name }}">
-       <div class="card-img-overlay">
-            <h5 class="card-title">{{ photo.name }}</h5>
-            <p class="card-text">{{ photo.description }}</p>
-            <a href="{% url 'photo_detail' photo.id %}">
-            <button type="button" class="btn btn-success">More Info</button>
-        </a>
-        </div>
-
-
-</div>
-{% endfor %} 
-</div>
-
-<!--experimental
-<div class="row row-flex">
-    {% for photo in photos %}
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-            <div class="panel-body">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-                <h3>{{ photo.name }}</h3>
-                <p class="product-description">{{ photo.description }}</p>
-                <p>{{ photo.price }}</p>
-
-                <form method="post" action="">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                        <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
-                        </span>
-                    </div>
-                </form>
+        <div class="row pb24">
+            
+            <div class="col-sm-12 text-center">
+                <ul class="filters mb0">
+                    <li data-filter="all" class="active">All</li>
+                    {% for photo in photos %}
+                    <li data-filter="{{ photo.category }}">{{ photo.category }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
-    {% endfor %}
-</div>
--->
+        <!--end of row-->
+        <div class="row masonry masonryFlyIn fadeIn" style="position: relative; height: 840px;">
+            {% for photo in photos %}
+            <div class="col-md-4 col-sm-6 masonry-item project fadeIn" data-filter="{{ photo.category }}"
+                style="position: absolute; left: 0px; top: 0px;">
+                <div class="image-tile inner-title hover-reveal text-center">
+                    <a href="{% url 'photo_detail' photo.id %}">
+                        <img alt="{{ photo.name }}" src="{{ MEDIA_URL }}{{ photo.previewimage }}">
+                        <div class="title">
+                            <h5 class="uppercase mb0">{{ photo.name }}</h5>
+                            <span>{{ photo.category }}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!--end of row-->
+    </div>
+</section>
+    <!--end of container-->
+
+
 {% endblock %}
