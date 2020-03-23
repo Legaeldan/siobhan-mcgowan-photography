@@ -11,7 +11,7 @@ def index(request):
     """A view that displays the index page"""
     photos = Photo.objects.all()
     reviews = Review.objects.all()
-    return render(request, "index.html", {"photos": photos}, {"reviews": reviews})
+    return render(request, "index.html", {"photos": photos, "reviews": reviews})
 
 def contact(request):
     """A simple contact page for users to contact the photographer"""
