@@ -24,7 +24,7 @@
                                 <ul>
                                     <li>
                                         <a href="{{ MEDIA_URL }}{{ photo.previewimage }}" data-lightbox="Gallery">
-                                            <div class="background-image-holder fadeIn" style="background: url(&quot;img/cover1.jpg&quot;);">
+                                            <div class="background-image-holder fadeIn" style="background: url({{ MEDIA_URL }}{{ photo.previewimage }});">
                                                 <img alt="image" class="background-image" src="{{ MEDIA_URL }}{{ photo.previewimage }}" style="display: none;">
                                             </div>
                                         </a>
