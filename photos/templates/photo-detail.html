@@ -8,9 +8,7 @@
                 <h3 class="uppercase mb0">{{ photo.name }}</h3>
             </div>
         </div>
-        <!--end of row-->
     </div>
-    <!--end of container-->
 </section>
 
 <section>
@@ -18,8 +16,6 @@
         <div class="product-single">
             <div class="row mb24 mb-xs-48">
                 <div class="col-md-5 col-sm-6">
-
-
                         <div class="lightbox-grid square-thumbs" data-gallery-title="Gallery">
                                 <ul>
                                     <li>
@@ -32,9 +28,6 @@
 
                                 </ul>
                             </div>
-                                  
-
-                    <!--end of image slider-->
                 </div>
                 <div class="col-md-5 col-md-offset-1 col-sm-6">
                     <div class="description">
@@ -59,42 +52,7 @@
                     </form>
                 </div>
             </div>
-            <!--end of row-->
-
         </div>
-        <!--end of product single-->
     </div>
-    <!--end of container-->
 </section>
-
-
-<!--
-    <div class="row">
-       <div class="col-xs-10 offset-xs-1 col-lg-6">
-            <img id="product-image" src="{{ MEDIA_URL }}{{ photo.previewimage }}" />
-        </div>
-        <div id="photo-details" class="col-xs-10 offset-xs-1 col-lg-6 text-center">
-            <h2>
-                {{ photo.name }}
-            </h2>
-            <div>
-                {{ photo.description }}
-                
-            </div>
-            <h4>Dimensions</h4>
-            <div>
-                    {{ photo.previewimage.width }} X {{ photo.previewimage.height }}
-            </div>
-            <form class="photo-details-form"method="post" action="{% url 'add_to_cart' photo.id %}">
-                {% csrf_token %}
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">Add to cart</button>
-                    </span>
-                </div>
-            </form>
-
-        
-         
-        -->
 {% endblock %}

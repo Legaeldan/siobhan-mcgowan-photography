@@ -41,9 +41,7 @@
                 {% endif %}
             </div>
         </div>
-        <!--end of row-->
     </div>
-    <!--end of container-->
 </section>
 
 <section class="portfolio-pullup">
@@ -65,10 +63,7 @@
             {% endif %}
             {% endfor %}
         </div>
-        <!--end of row-->
     </div>
-    <!--end of container-->
-
 </section>
 
 <section class="pt0 pb180 pt-xs-80 pb-xs-80">
@@ -96,9 +91,7 @@
                 </div>
             </div>
         </div>
-        <!--end of row-->
     </div>
-    <!--end of container-->
 </section>
 
 <section class="bg-secondary pt64 pb64">
@@ -112,66 +105,6 @@
                 <a class="btn btn-filled btn-lg mb0" href="{% url 'contact' %}">Contact Us</a>
             </div>
         </div>
-        <!--end of row-->
     </div>
-    <!--end of container-->
 </section>
-<!--<div class="row banner-container">
-<img class="d-block w-100" src="{{ MEDIA_URL }}Lough_Melvin_at_sunset.jpg"
-    alt="Siobhan McGowan Photography">
-    <div class="banner-overlay text-center">
-        <h3>SIOBHAN <span>MCGOWAN</span> PHOTOGRAPHY</h3>
-        <p>strong overlay</p>
-    </div>
-</div> 
-    <div class="row">
-        <div class="col-s-12">
-            <h2 class="text-left">Latest Pictures</h2>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-s-12">
-            <div id="multi-item" class="carousel slide carousel-multi-item carousel-multi-item-2" data-ride="carousel">
-                <div class="controls-top">
-                    <a class="black-text" href="#multi-item" data-slide="prev"><i
-                            class="fas fa-arrow-left fa-3x pl-3"></i></a>
-                    <a class="black-text" href="#multi-item" data-slide="next"><i
-                            class="fas fa-arrow-right fa-3x pl-3"></i></a>
-                </div>
-                <div class="carousel-inner" role="listbox">
-                    {% for photo in photos %}
-                    {% if forloop.counter <= 8 %}
-                    {% if forloop.counter == 1 %}
-                    <div class="carousel-item active">
-                        {% endif %}
-                        {% if forloop.counter == 5 %}
-                        <div class="carousel-item">
-                            {% endif %}
-
-                            <div class="col-md-3 mb-3 my-auto">
-                                <div class="card text-center">
-                                    <img class="img-fluid" src="{{ MEDIA_URL }}{{ photo.previewimage }}" alt="Card image cap">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title">{{ photo.name }}</h5>
-                                        <p class="card-text">{{ photo.description }}</p>
-                                        <a href="{% url 'photo_detail' photo.id %}">
-                                            <button type="button" class="btn btn-success">More Info</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            {% if forloop.counter == 4 %}
-                        </div>
-                        {% endif %}
-                        {% if forloop.counter == 8 %}
-                    </div>{% endif %}
-                    {% endif %}
-                    {% endfor %}
-                </div>
-
-            </div>
-        </div>
-
-    -->
 {% endblock %}
