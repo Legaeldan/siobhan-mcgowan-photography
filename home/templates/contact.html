@@ -24,6 +24,18 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 col-md-5">
+                                                       {% if messages %}
+                            {% for message in messages %}
+                            {% if message.tags == 'success' %}
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ message }}
+                            </div>
+                            {% endif %}
+                                {% endfor %}
+                            {% endif %}
                             <h4 class="uppercase">Get In Touch</h4>
                             <p>
                                 If you wish to request a photography session, or have an upcoming event you would love to capture. Don't be afraid to get in touch with us at any of the methods shown on this page.
