@@ -37,7 +37,7 @@ def contact(request):
         message_admin = request.POST['message']
         from_email = os.environ.get("EMAIL_MASTER_SENDER")
         recipient_list = [request.POST['user_email']]
-        admin_email = [os.environ.get['EMAIL_MASTER_SENDER']]
+        admin_email = [os.environ.get('EMAIL_MASTER_SENDER')]
         print("Sending mail")
         email = EmailMessage(subject, message, from_email , recipient_list)
         email_admin = EmailMessage(subject, message_admin, from_email , admin_email)
