@@ -35,7 +35,8 @@ def contact(request):
                   " " \
                   "The message you sent was: %s from %s" % (form_name, form_message, sender)
         message_admin = request.POST['message']
-        from_email = os.environ.get("EMAIL_MASTER_SENDER")
+        from_email = "SMGPhotography <"+str(os.environ.get("EMAIL_MASTER_SENDER"))+">"
+        print(from_email)
         recipient_list = [request.POST['user_email'], os.environ.get("EMAIL_MASTER_SENDER")]
         admin_email = [os.environ.get('EMAIL_MASTER_SENDER')]
         print("Sending mail")
