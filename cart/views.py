@@ -12,7 +12,7 @@ def add_to_cart(request, id):
     """Add a photo to the cart"""
     cart = request.session.get('cart', {})
     if id in cart:
-        messages.error(request, "Item is already in cart!")
+        messages.error(request, "No Good! Item is already in cart!")
     else:
         cart[id] = cart.get(id)
     request.session['cart'] = cart
