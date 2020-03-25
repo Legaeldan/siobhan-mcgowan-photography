@@ -64,11 +64,11 @@ def checkout(request):
                     print(photo.image)
                     email.attach(photo.name, response.content,mimetype="image/jpg")
                 email.send()
-                    
+                messages.success(request, "Order completed successfully!")
                 request.session['cart'] = {}
 
 
-                return redirect(reverse('photos'))
+                return redirect(reverse('profile'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
