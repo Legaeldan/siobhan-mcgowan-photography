@@ -1,3 +1,4 @@
+import os
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages, auth
@@ -64,7 +65,7 @@ def checkout(request):
                     print(photo.image)
                     email.attach(photo.name, response.content,mimetype="image/jpg")
                 email.send()
-                messages.success(request, "Order completed successfully!")
+                messages.success(request, "Congratulations! Your order completed successfully! You should recieve a mail containing your prints!")
                 request.session['cart'] = {}
 
 
