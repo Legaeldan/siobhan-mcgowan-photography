@@ -33,12 +33,13 @@ def contact(request):
                   "We endeavor to contact everyone as soon as possible, and will be in touch shortly." \
                   " " \
                   "The message you sent was: %s from %s" % (form_name, form_message, sender)
-        from_email = settings.EMAIL_HOST_USER
-        recipient_list = [request.POST['user_email']]
-        send_mail(subject, message, from_email , recipient_list)
+        from_email = "Legaeldan@gmail.com"
+        recipient_list = [request.POST['user_email'], 'Legaeldan@gmail.com']
+        print("Sending mail")
+        send_mail(subject, message, from_email, recipient_list)
         messages.success(request, 'You message was sent successfully. We will be in touch shortly')
         
-        return redirect(reverse('contact', {"contact_form": contact_form}))
+        return render(request, "contact.html", {"contact_form": contact_form})
 
 
     return render(request, "contact.html", {"contact_form": contact_form})
