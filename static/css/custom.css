@@ -89,6 +89,10 @@ button[type="submit"] {
     border: 2px solid goldenrod;
 }
 
+.btn:visited {
+    color: goldenrod;
+}
+
 .btn-filled,
 .btn:hover,
 input[type="submit"],
@@ -115,4 +119,16 @@ button[type="submit"]:hover,
 .btn:focus, 
 .btn:active:focus {
     outline-color: goldenrod;
+}
+
+.index-success, .index-danger {
+    color: #ffffff;
+}
+
+.index-success {
+    background-color: rgba(121, 199, 124, 0.3);
+}
+
+.index-danger {
+    background-color: rgba(198, 68, 68, 0.3);
 }
