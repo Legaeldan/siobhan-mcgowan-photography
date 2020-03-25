@@ -6,8 +6,6 @@ from django.contrib import messages
 # Create your views here.
 def view_cart(request):
     """A View that renders the cart contents page"""
-    print(request.user.is_authenticated)
-    print(request.user.email)
     return render(request, "cart.html")
 
 def add_to_cart(request, id):
@@ -15,11 +13,9 @@ def add_to_cart(request, id):
     cart = request.session.get('cart', {})
     if id in cart:
         messages.error(request, "Item is already in cart!")
-        print(messages)
     else:
         cart[id] = cart.get(id)
     request.session['cart'] = cart
-    print(cart)
     return redirect(reverse('view_cart'))
 
 def remove_from_cart(request, id):
@@ -29,6 +25,5 @@ def remove_from_cart(request, id):
     """
     cart = request.session.get('cart', {})
     cart.pop(id)
-    print(cart)
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
