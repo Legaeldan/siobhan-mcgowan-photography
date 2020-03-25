@@ -54,7 +54,7 @@ def checkout(request):
                 message = "Thank you %s for your order with SMG Photography." \
                           " " \
                           "Please find attached your digital prints." % (request.user.username)
-                from_email = settings.EMAIL_HOST_USER
+                from_email = os.environ.get('EMAIL_MASTER_SENDER')
                 recipient_list = [request.user.email]
                 print(request.user.email)
                 email = EmailMessage(subject, message, from_email , recipient_list)
