@@ -70,6 +70,7 @@ def register(request):
 
             else:
                 messages.error(request, "unable to log you in at this time!")
+        return redirect(reverse('index'))
     else:
         user_form = UserRegistrationForm()
 
