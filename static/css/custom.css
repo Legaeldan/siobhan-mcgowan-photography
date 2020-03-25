@@ -82,3 +82,37 @@ input[type="email"] {
     margin-bottom: 24px;
     border-radius: 0;
 }
+
+.btn,
+input[type="submit"],
+button[type="submit"] {
+    border: 2px solid goldenrod;
+}
+
+.btn-filled,
+.btn:hover,
+input[type="submit"],
+button[type="submit"] {
+    background-color: goldenrod;
+}
+
+button[type="submit"]:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:active:focus {
+    background-color: #666;
+}
+
+.btn-primary:active:focus {
+    border-color: #3b3b3b;
+}
+
+.image-bg .btn:hover {
+    background-color: #666;
+    color: white;
+}
+
+.btn:focus, 
+.btn:active:focus {
+    outline-color: goldenrod;
+}
