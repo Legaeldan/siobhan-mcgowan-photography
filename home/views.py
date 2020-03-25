@@ -36,13 +36,11 @@ def contact(request):
                   "The message you sent was: %s from %s" % (form_name, form_message, sender)
         message_admin = request.POST['message']
         from_email = os.environ.get("EMAIL_MASTER_SENDER")
-        recipient_list = [request.POST['user_email']]
+        recipient_list = [request.POST['user_email'], os.environ.get("EMAIL_MASTER_SENDER")]
         admin_email = [os.environ.get('EMAIL_MASTER_SENDER')]
         print("Sending mail")
         email = EmailMessage(subject, message, from_email , recipient_list)
-        email_admin = EmailMessage(subject, message_admin, from_email , admin_email)
         email.send()
-        email_admin.send()
         messages.success(request, 'You message was sent successfully. We will be in touch shortly')
         
         return render(request, "contact.html", {"contact_form": contact_form})
