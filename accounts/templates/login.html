@@ -14,7 +14,7 @@
                                 <fieldset class="form-group">
                                     {% csrf_token %}
                                     {{ user_form }}                               
-                                    <input type="submit" value="login">Login</button>
+                                    <input type="submit" value="login"></button>
                                     <div class="form-error" style="display: none;">Please fill all fields correctly.</div>
                                 </fieldset>
                                 {% for message in messages %}
