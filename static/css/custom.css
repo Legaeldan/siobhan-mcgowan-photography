@@ -89,7 +89,10 @@ button[type="submit"] {
     border: 2px solid goldenrod;
 }
 
-.btn:visited {
+.btn:visited,
+.tag-form>.btn:hover,
+.index-success,
+.index-danger {
     color: #ffffff;
 }
 
@@ -103,7 +106,8 @@ button[type="submit"] {
 button[type="submit"]:hover,
 .btn-primary:active,
 .btn-primary:focus,
-.btn-primary:active:focus {
+.btn-primary:active:focus,
+.image-bg .btn:hover  {
     background-color: #666;
 }
 
@@ -112,7 +116,6 @@ button[type="submit"]:hover,
 }
 
 .image-bg .btn:hover {
-    background-color: #666;
     color: #ffffff;
 }
 
@@ -121,14 +124,22 @@ button[type="submit"]:hover,
     outline-color: goldenrod;
 }
 
-.index-success, .index-danger {
-    color: #ffffff;
-}
-
 .index-success {
     background-color: rgba(121, 199, 124, 0.3);
 }
 
 .index-danger {
     background-color: rgba(198, 68, 68, 0.3);
+}
+
+.tag-form {
+    display: inline-block;
+}
+
+.tag-form>.btn {
+    color: goldenrod;
+}
+
+ {
+    color: white;
 }
