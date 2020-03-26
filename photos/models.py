@@ -25,7 +25,8 @@ class Photo(models.Model):
     featured = models.BooleanField(default=False)
     active = models.BooleanField(default=True)
     banner = models.BooleanField(default=False)
-
+    def tags_as_list(self):
+        return self.tags.split(', ')
 
     def __str__(self):
         return self.name
