@@ -7,8 +7,10 @@ from django.conf import settings
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 from .forms import ContactForm
+from django.views.decorators.clickjacking import xframe_options_exempt
 
 # Create your views here.
+@xframe_options_exempt
 def index(request):
     """A view that displays the index page"""
     photos = Photo.objects.all()
