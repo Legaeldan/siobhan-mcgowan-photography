@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+import re
 
 # Create your models here.
 class Category(models.Model):
@@ -17,7 +18,7 @@ class Photo(models.Model):
     name = models.CharField(max_length=150, default='Photograph')
     description = models.TextField()
     category = models.ForeignKey(Category, null=True, blank=True)
-    tags = models.CharField(max_length=150, blank=True, default='Seperate tags with a comma')
+    tags = models.CharField(max_length=150, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     published_date = models.DateTimeField(blank=True, default=timezone.now)
     image = models.ImageField(upload_to='images')
@@ -25,8 +26,9 @@ class Photo(models.Model):
     featured = models.BooleanField(default=False)
     active = models.BooleanField(default=True)
     banner = models.BooleanField(default=False)
+    
     def tags_as_list(self):
-        return self.tags.split(', ')
+        return re.findall(r"[\w']+", self.tags)
 
     def __str__(self):
         return self.name
