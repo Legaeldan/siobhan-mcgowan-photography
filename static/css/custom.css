@@ -1,4 +1,14 @@
 /****** PLACE YOUR CUSTOM STYLES HERE ******/
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+}
+
 .brand-title,
 .tag-form>.btn:hover,
 .index-success,
@@ -23,7 +33,6 @@ th {
 .order-total,
 .filters li,
 .tag-form>.btn,
-.btn:visited,
 .product-single .price  {
     color: #daa520;
 }
