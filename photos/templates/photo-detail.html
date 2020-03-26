@@ -44,6 +44,15 @@
                             <li>
                                 <strong>SIZE (W x H):</strong> {{ photo.previewimage.width }} X {{ photo.previewimage.height }}</li>
                         </ul>
+
+                        <form class="tag-form" action="{% url 'search' %}" method="GET">
+                            {% if photo.tags_as_list|length > 1 %}
+                            {% for tag in photo.tags_as_list %}
+                            <button class="btn btn-sm btn-rounded" value="{{ tag }}" name="q">{{ tag }}</button>
+                            {% endfor %}
+                            {% endif %}
+                        </form>
+                        
                     </div>
                     <hr class="mb48 mb-xs-24">
                     <form class="add-to-cart" method="post" action="{% url 'add_to_cart' photo.id %}">
