@@ -1,6 +1,5 @@
 /****** PLACE YOUR CUSTOM STYLES HERE ******/
 .brand-title,
-.btn:visited,
 .tag-form>.btn:hover,
 .index-success,
 .index-danger,
@@ -23,7 +22,14 @@ th {
 
 .order-total,
 .filters li,
-.tag-form>.btn  {
+.tag-form>.btn,
+.btn:visited,
+.product-single .price  {
+    color: #daa520;
+}
+
+.product-single .price:not(.old-price) {
+    font-weight: 600;
     color: #daa520;
 }
 
