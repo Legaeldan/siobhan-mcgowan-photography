@@ -138,5 +138,9 @@ button[type="submit"]:hover,
 }
 
 .filters li.active {
-    border-color: goldenrod;
+    border-color: #daa520;
+}
+
+.white-inner {
+    color: #daa520
 }
