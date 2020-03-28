@@ -47,36 +47,39 @@
                             {% endif %}
                             {% endfor %}
 
+                            <div class="col-sm-10 col-sm-offset-1 text-center">
+                                    <h4 class="uppercase">Purchased Photographs</h4>
+                                    <p>
+                                       Click the images below to view your purchased photographs
+                                    </p>
+                                </div>
     <table class="table cart mb48">
         <thead>
             <tr>
                 <th>Image</th>
                 <th>Product Name</th>
                 <th>Size</th>
-                <th>View Link</th>
             </tr>
         </thead>
         <tbody>
                 {% for line in lines %}
                 {% if line.order.user_name == "Legaeldan" %}
-                
-                <tr>
+            
+                <tr>  
                         <td>
+                                <a href="{{ MEDIA_URL }}{{ line.photo.image }}" target="_blank"> 
                                 <img alt="{{ line.photo.name }}" class="product-thumb" src="{{ MEDIA_URL }}{{ line.photo.image }}">
-                        </td>
+                                </a>
+                            </td>
                         <td>
                             <span>{{ line.photo.name }}</span>
                         </td>
                         <td>
                             <span>{{ line.photo.previewimage.width }} X {{ line.photo.previewimage.height }}</span>
                         </td>
-
-<td>
-    <a href="{{ MEDIA_URL }}{{ line.photo.image }}" target="_blank">
-                        <button type="submit" class="btn btn-primary">View Now</button>
-    </a>
-                    </td>
+               
                     </tr>
+
                     {% endif %}
     {% endfor %}
                 </tbody>
