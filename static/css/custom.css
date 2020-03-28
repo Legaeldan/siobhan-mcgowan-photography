@@ -166,3 +166,7 @@ button[type="submit"]:hover,
 .search-fail>button {
     width: 30%;
 }
+
+.cart .product-thumb {
+    max-width: 80px;
+}
