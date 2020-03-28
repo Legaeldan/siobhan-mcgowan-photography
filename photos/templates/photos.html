@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if photos %}
 <section class="projects pt48">
     <div class="container">
 
@@ -15,6 +16,7 @@
                 </ul>
             </div>
         </div>
+
         <div class="row masonry masonryFlyIn fadeIn" style="position: relative; height: 840px;">
             {% for photo in photos %}
             <div class="col-md-4 col-sm-6 masonry-item project fadeIn" data-filter="{{ photo.category }}"
@@ -33,6 +35,43 @@
         </div>
     </div>
 </section>
+        {% else %}
+        <section class="fullscreen" style="height: 837px;">
+                <div class="container v-align-transform">
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <div class="text-center">
+                                <i class="ti-face-sad icon icon-lg mb24 mb-xs-0"></i>
+                                <h1 class="large">No Results</h1>
+                                <p>No results for search query. Please try searching again, or visit one of the below links.</p>
+                                <form class="search-fail col-sm-8 col-sm-offset-2" action="{% url 'search' %}" method="GET">
+                                        <input type="text" class="search-inner" placeholder="Type Here" name="q"/>
+                                </form>
+                                <a class="btn white-inner" href="{% url 'index' %}">Go Back Home</a>
+                                <a class="btn white-inner" href="{% url 'photos' %}">Portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                    <div class="embelish-icons">
+                            <i class="ti-search"></i>
+                            <i class="ti-alert"></i>
+                            <i class="ti-help-alt"></i>
+                            <i class="ti-search"></i>
+                            <i class="ti-alert"></i>
+                            <i class="ti-help-alt"></i>
+                            <i class="ti-search"></i>
+                            <i class="ti-alert"></i>
+                            <i class="ti-help-alt"></i>
+                            <i class="ti-search"></i>
+                            <i class="ti-alert"></i>
+                            <i class="ti-help-alt"></i>
+                    </div>
+                </div>
+                <!--end of container-->
+            </section>
+        {% endif %}
+ 
 
 
 {% endblock %}
