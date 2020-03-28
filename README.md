@@ -62,16 +62,61 @@ The photographer in question approach myself to design a simple site to showcase
 
 # UX
 
-
 ## Project Goals
+
+The main objective in creating the SMGPhotography application is to provide the user with a simple to use e-commerce site, with live filtering of object, a simple way to search for photos dependant on type or tag, and provide and automated delivery of digital prints of photos. Also to provide an easy to maintain system to the admin for maintaining the database, and presenting images, including featured images to the user.
+
+This applications is designed with news media providers in mind who require a simple way to view the photographers entire portfolio, and filter based on requirements.
+
+As a side goal, I have left room for expansion once I have developed my skills further, and would like to develop this into a commercially viable system with ordering features pertaining to physical prints with delivery/shipping calculated dependant on size/weight, etc, as outlined below in the [**Features Left to Implement**](#features-left-to-implement).
 
 ## Development Goal
 
+- A project I'd be excited to show off to people as a testament to my abilities.
+- Well thought out programming to account for the unpredictability of users. 
+- Something that looked professional even for a novice programmer on their first venture into the Django framework, and first deployment on a PostGres database, with S3 storages.
+- To learn and impliment intricate python code that would be impressive to a veteran python programmer.
+- To create a viable e-commerce site that could be used by the company this design is based from, and provide them with a solution to displaying and distributing their work.
+
 ## User Stories
+
+ **As a user I want this application to have:**
+ 1. A system to search for photos based on certain tags/categories/name.
+ 2. A website that is easy to navigate.
+ 3. A website which is pleasant to look at and looks professional.
+ 4. A way to view all my purchases after they are made.
+ 5. An application that is fast, with very short load times.
 
 ## Wireframes
 
+Wireframes were built in the early stages of development to get a rough outline of the structure needed for the planned features of the site. These can be viewed below:
+
+- [Desktop](#) Not Complete
+- [Tablet](#) Not Complete
+- [Mobile](#) Not Complete
+
 ## Design choices
+
+The main approach to this application is made to easy to maintain, and easy to use database. To provide as many features as possible to make the entire experience simple. The following design choices were made to reflect this:
+
+**Fonts**
+
+- The Nav elements font **Open Sans** with a main body font **Roboto** was chosen due to it's simplistic design, as not to distract from the overall site, and to not clash with the colourful images provided in the portfolio section. With this subtle font choice, it reflects nicely on the simplistic overall white/off-white background choices.
+
+**Colours**
+
+- The colour choices were made to be simplistic, and to increase the standout look of elements such as the banner, and photo thumbnails.
+- Colours of **white** and **off-black** were chosed to not overload the user, and maintain a simple, clean look with a nice definitive contrast from page elements, and overall page.
+- **Goldenrod** was chosen as nice contrast to the **white** background and **offblack** elements of the site, and to help highlight any helpful links. **Goldenrod** was found to be the best contrast while remaining easy on the eye.
+
+**Styling**
+
+- Use of the **BootStrap** framework, coupled with the template **Foundry** was used to keep the site simple, only displaying relevant information, without drawing attention away from the content.
+- The overall decision of square edges to all content was decided upon to keep the site looking sharp, but not harsh. Highlighting a definite edge to everything on the page, without accosting the user with too much information.
+
+**Background**
+
+- Background colour of  **white** was selected to better help the images and text stand out on screen, and give the elements on the page more power in standing out. This also helps accentuate the colours and images on screen, and give more depth to the overall page. This also gives the page an overall profession look, and encourages the user to understand this site belongs to a professional who they would want to work with.
 
 # Features
 
@@ -109,19 +154,27 @@ The photographer in question approach myself to design a simple site to showcase
 
 ## Database Choice
 
+In the initial planning phase of this project, an SQLite3 structured database was decided upon due to it's native support in Django. On this decision, it was agreed to utilize the PostGres supported database inbuilt into Heroku to store and sort all data.
+
 ## Data Types
-The types of data in this project stored in MongoDB are:
-- Id
-- String
+
+The types of data in this project stored in Postgres are:
+
+- Integer
+- Character varying
 - Boolean
-- Array
+- Timestamp with time zone
+- Numeric
+- Text
+- Date
 
 ## Collections Structure
 
 SMGPhotography relies on the below connected database tables as outlined.
 
+
 ```
-Schema |            Name            | Type  |
+Schema |            Name            | Type  
 -------+----------------------------+-------
 public | auth_group                 | table 
 public | auth_group_permissions     | table 
@@ -157,7 +210,6 @@ The schemas for the relevant tables are outlines in the attached file below, or 
 
 # Technologies Used
 
-
 ## Languages
 - [Python](https://www.python.org/)
     - The project uses **Python** to run the application.
@@ -181,6 +233,8 @@ The schemas for the relevant tables are outlines in the attached file below, or 
     - This project utilise **Stripe** to process payments, and act as a go between between the user and the bank as a payment processor.
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation. 
+- [Django Storages](https://django-storages.readthedocs.io/en/latest/)
+    - The project uses **Django Storages** to facilitate the transfer and storage of documents uploaded to the admin panel, and provide an easy way to sort and store media/static files, and provide dynamically generated links to all media. 
 
 ## Software
 - [Visual Studio Code](https://code.visualstudio.com/)
@@ -296,6 +350,10 @@ For more help on cloning a repository on Github, please click [here](https://hel
 
 # Credits
 
-I received inspiration and assistance on this project from [Simen Daehlin (Eventyret)](https://github.com/Eventyret), who assisted above and beyond to help improve the site. What seemed like the impossible task of understanding [Django](https://www.djangoproject.com/), became far simpler that originally believed. He has helped understand this language a lot better, and has pointed me in the right direction everytime whenever an issue arose with how to impliment code.
+I received inspiration and assistance on this project from [Simen Daehlin (Eventyret)](https://github.com/Eventyret), who assisted above and beyond to help improve the site. What seemed like the impossible task of understanding [Django](https://www.djangoproject.com/), and although still more understanding of this framework is required, I have the tools to create an effective e-commerce site. He has helped understand this framework a lot better, and has pointed me in the right direction everytime whenever an issue arose with how to impliment code.
 
 # Disclaimer
+
+Please note that all code and images in this site are for educational purposes only. All images are property of Siobhan McGowan Photograhy, and have been authorised for use in this project only. Any re-use or distribution of the images in this application is strictly prohibited. 
+
+The template used in this project is also licensed under a single use license specific to this project, and therefor this template cannot be re-used in deployment of any other site unless a license is purchased from [ThemeForest](https://themeforest.net/item/foundry-multipurpose-html-variant-page-builder/11562108)
