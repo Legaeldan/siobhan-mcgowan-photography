@@ -46,6 +46,7 @@
                                 <p>No results for search query. Please try searching again, or visit one of the below links.</p>
                                 <form class="search-fail col-sm-8 col-sm-offset-2" action="{% url 'search' %}" method="GET">
                                         <input type="text" class="search-inner" placeholder="Type Here" name="q"/>
+                                        <button type="submit" class="btn btn-primary">Search</button>
                                 </form>
                                 <a class="btn white-inner" href="{% url 'index' %}">Go Back Home</a>
                                 <a class="btn white-inner" href="{% url 'photos' %}">Portfolio</a>
