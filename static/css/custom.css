@@ -23,7 +23,8 @@ th {
 .order-total,
 .filters li,
 .tag-form>.btn,
-.product-single .price  {
+.product-single .price,
+.btn:visited  {
     color: #daa520;
 }
 
@@ -141,6 +142,17 @@ button[type="submit"]:hover,
     border-color: #daa520;
 }
 
-.white-inner {
-    color: #daa520
+.cart-controls>.btn:visited,
+.contact-link>.btn:visited {
+    color: #ffffff;
+}
+
+.search-fail {
+    border: 2px solid rgba(128, 128, 128, 0.5);
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.search-fail>.search-inner {
+    margin-bottom: 0;
 }
