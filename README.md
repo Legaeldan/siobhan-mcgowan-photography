@@ -136,9 +136,9 @@ The photographer in question approach myself to design a simple site to showcase
     - The project uses **Javascript** to allow for DOM manipulation.
 
 ## Frameworks/Libraries
--[Django](https://www.djangoproject.com/)
+- [Django](https://www.djangoproject.com/)
     - This project utilises the **Django** framework to render the site, including URL configurations, and defining models for data to be stored.
--[SendGrid](https://sendgrid.com/)
+- [SendGrid](https://sendgrid.com/)
     - This project uses the **sendgrid** backend and SMTP service to facilitate the automated delivery of orders, and to enable the use to send the administrator emails, with copies sent to the user.
 - [BootStrap](https://getbootstrap.com/)
     - The project uses the **BootStrap** framework to simplify the structure of the website and make the website responsive easily.
@@ -160,10 +160,16 @@ The photographer in question approach myself to design a simple site to showcase
     - This project used tools in **Visio** to create, edit, and present wireframes in a more professional manner.
 
 ## Additional Resources
-Foundry - ThemeForest
--[Themify Icons](https://themify.me/themify-icons)
+- [Foundry - ThemeForest](https://themeforest.net/item/foundry-multipurpose-html-variant-page-builder/11562108)
+    - This project utilizes a regular license with **ThemeForest** with the **Foundry** template. 
+- [Themify Icons](https://themify.me/themify-icons)
     - The project uses **Themify** to style additional website icon links.
-PostGres
+- [PostGres](https://www.heroku.com/postgres)
+    - This project uses the **Heroku Postgres** database to store all information entered through the website admin console.
+- [SendGrid](https://sendgrid.com/)
+    - This project uses a **sendgrid** account to handle sending customised mails to end users.
+- [AWS S3](https://aws.amazon.com/s3/)
+    - This project utilizes the **AWS S3** platform for storage of all media and static files.
 
 # Deployment
 
