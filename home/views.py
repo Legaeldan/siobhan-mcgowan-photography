@@ -27,24 +27,27 @@ def contact(request):
     """A simple contact page for users to contact the photographer"""
     contact_form = ContactForm()
     if request.method == 'POST':
-        subject = 'Thank you for contacting SMG Photography to our site'
-        form_name = request.POST['user_name']
-        form_message = request.POST['message']
-        sender = request.POST['user_email']
-        message = "Thank you %s for contact us here at SMG Photography." \
-                  " " \
-                  "We endeavor to contact everyone as soon as possible, and will be in touch shortly." \
-                  " " \
-                  "The message you sent was: %s from %s" % (form_name, form_message, sender)
-        message_admin = request.POST['message']
-        from_email = "SMGPhotography <"+str(os.environ.get("EMAIL_MASTER_SENDER"))+">"
-        print(from_email)
-        recipient_list = [request.POST['user_email'], os.environ.get("EMAIL_MASTER_SENDER")]
-        admin_email = [os.environ.get('EMAIL_MASTER_SENDER')]
-        print("Sending mail")
-        email = EmailMessage(subject, message, from_email , recipient_list)
-        email.send()
-        messages.success(request, 'You message was sent successfully. We will be in touch shortly')
+        try:
+            subject = 'Thank you for contacting SMG Photography to our site'
+            form_name = request.POST['user_name']
+            form_message = request.POST['message']
+            sender = request.POST['user_email']
+            message = "Thank you %s for contact us here at SMG Photography." \
+                    " " \
+                    "We endeavor to contact everyone as soon as possible, and will be in touch shortly." \
+                    " " \
+                    "The message you sent was: %s from %s" % (form_name, form_message, sender)
+            message_admin = request.POST['message']
+            from_email = "SMGPhotography <"+str(os.environ.get("EMAIL_MASTER_SENDER"))+">"
+            print(from_email)
+            recipient_list = [request.POST['user_email'], os.environ.get("EMAIL_MASTER_SENDER")]
+            admin_email = [os.environ.get('EMAIL_MASTER_SENDER')]
+            print("Sending mail")
+            email = EmailMessage(subject, message, from_email , recipient_list)
+            email.send()
+            messages.success(request, 'You message was sent successfully. We will be in touch shortly.')
+        except:
+            messages.error(request, "Your message could not be sent at this time. Please try again shortly.")
         
         return render(request, "contact.html", {"contact_form": contact_form})
 
