@@ -25,6 +25,29 @@
 <section>
     <div class="container">
             <div class="row">
+                    {% if messages %}
+                    {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                    <div class="alert alert-success alert-dismissible index-success" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ message }}
+                    </div>
+                </div>
+                    {% elif message.tags == 'error' %}
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                    <div class="alert alert-danger alert-dismissible index-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ message }}
+                    </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
                     <div class="col-md-4">
                         <div class="text-center">
                             <h4 class="uppercase">Order Summary</h4>
