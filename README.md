@@ -132,10 +132,22 @@ The photographer in question approach myself to design a simple site to showcase
     - The project uses **HTML** to structure the DOM.
 - [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
     - The project uses **CSS** to style and theme pages..
- - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript)
     - The project uses **Javascript** to allow for DOM manipulation.
 
 ## Frameworks/Libraries
+-[Django](https://www.djangoproject.com/)
+    - This project utilises the **Django** framework to render the site, including URL configurations, and defining models for data to be stored.
+-[SendGrid](https://sendgrid.com/)
+    - This project uses the **sendgrid** backend and SMTP service to facilitate the automated delivery of orders, and to enable the use to send the administrator emails, with copies sent to the user.
+- [BootStrap](https://getbootstrap.com/)
+    - The project uses the **BootStrap** framework to simplify the structure of the website and make the website responsive easily.
+- [Virtual Env](https://virtualenv.pypa.io/en/latest/)
+    - This project utilise **VirtualEnv** to run a closed virtual enviroment specifically tailored for this project.
+- [Stripe](https://stripe.com/)
+    - This project utilise **Stripe** to process payments, and act as a go between between the user and the bank as a payment processor.
+
+
 
 ## Software
 - [Visual Studio Code](https://code.visualstudio.com/)
@@ -148,7 +160,10 @@ The photographer in question approach myself to design a simple site to showcase
     - This project used tools in **Visio** to create, edit, and present wireframes in a more professional manner.
 
 ## Additional Resources
-
+Foundry - ThemeForest
+-[Themify Icons](https://themify.me/themify-icons)
+    - The project uses **Themify** to style additional website icon links.
+PostGres
 
 # Deployment
 
@@ -182,6 +197,59 @@ To deploy this page to [Heroku](https://www.heroku.com/) from its [GitHub reposi
  - [Visual Studio Code](https://code.visualstudio.com/)
  - [Git](https://git-scm.com/downloads)
  - [Python](https://www.python.org/)
+ - An account with [Stripe](https://www.stripe.com/). Please refer to the [Stripe Documentation](https://stripe.com/docs) for more help.
+ - An account with [SendGrid](https://sendgrid.com/). Please refer to the [SendGrid Documentation](https://sendgrid.com/docs/) for more help.
+ - An account with [AWS S3](https://aws.amazon.com/s3/). Please refer to the [S3 Documentation](https://docs.aws.amazon.com/s3/index.html) for more help.
+
+
+
+To clone this project from GitHub:
+1. Follow this link to the [GitHub repository](https://github.com/Legaeldan/siobhan-mcgowan-photography).
+2. Under the repository name, click the green "Clone or download" button.
+3. In the Clone with HTTPs section, copy the clone URL for the repository. 
+4. In your local editor program, open a terminal.
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type ```git clone```, and then paste the URL you copied in Step 3.
+
+```
+git clone https://github.com/Legaeldan/siobhan-mcgowan-photography
+```
+
+7. Press Enter. Your local clone will be created.
+8. From the terminal, type ```pip3 install virtualenv```
+9. Once the above is complete, type ```virtualenv env```. This will create your local virtual enviroment.
+10. Create a folder in the root directory called **.vscode**.
+11. In the **.vscode** folder, create a file called **settings.json**
+12. Insert the below code into the settings.json file, wait for the enviroment to load (This can be seen in the lower left hand corner of VSCode).
+```json
+{
+  "python.pythonPath": "env\\Scripts\\python.exe",
+  "python.linting.pylintArgs": [
+    "--load-plugins=pylint_django"
+],
+  "terminal.integrated.env.windows": {
+      "SECRET_KEY": "[Insert secret key here]",
+      "IP": "127.0.0.1",
+      "PORT":"9100",
+      "AWS_SECRET_ACCESS_KEY": "[Insert AWS Secret Access Key here]",
+      "AWS_SECRET_KEY_ID": "[Insert AWS Secret Key here",
+      "DATABASE_URL": "[Insert Postgres URL here]",
+      "STRIPE_PUBLISHABLE": "[Insert Stripe Publishable Key here]",
+      "STRIPE_SECRET": "[Insert Stripe Secret Key here]",
+      "EMAIL_HOST_USER": "apikey",
+      "EMAIL_HOST_PASSWORD": "[Insert Sendgird API Key here]",
+    }
+}
+```
+13. Restart VSCode. The bottom left should now state **Python X.X.X 64/32-bit ('env':virtualenv)**
+14. Open a terminal windows. The directory in terminal should now be preceeded by **(env)**, stating the enviroment is now active.
+15. From the terminal, type ```pip3 install -r requirements.txt```.
+16. Once complete, type ```python manage.py makemigrations``` to create database micgrations.
+17. Once migrations are complete, type ````python manage.py migrate```. This will create the fields in the database for your data.
+18. Type in the terminal ```python manage.py runserver```.
+
+For more help on cloning a repository on Github, please click [here](https://help.github.com/en/articles/cloning-a-repository).
+
 
 # Credits
 
