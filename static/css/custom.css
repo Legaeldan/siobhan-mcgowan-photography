@@ -7,6 +7,10 @@
     color: #ffffff;
 }
 
+.main-container {
+    min-height: 85vh;
+}
+
 .brand-title span {
     color: #daa520 !important;
     font-weight: 600;
@@ -153,6 +157,12 @@ button[type="submit"]:hover,
     margin-bottom: 24px;
 }
 
-.search-fail>.search-inner {
+.search-fail>.search-inner,
+.search-fail>button  {
     margin-bottom: 0;
+}
+
+
+.search-fail>button {
+    width: 30%;
 }
