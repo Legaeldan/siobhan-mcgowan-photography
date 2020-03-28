@@ -110,8 +110,41 @@ The photographer in question approach myself to design a simple site to showcase
 ## Database Choice
 
 ## Data Types
+The types of data in this project stored in MongoDB are:
+- Id
+- String
+- Boolean
+- Array
 
 ## Collections Structure
+
+SMGPhotography relies on the below connected database tables as outlined.
+
+```
+Schema |            Name            | Type  |
+-------+----------------------------+-------
+public | auth_group                 | table 
+public | auth_group_permissions     | table 
+public | auth_permission            | table 
+public | auth_user                  | table 
+public | auth_user_groups           | table 
+public | auth_user_user_permissions | table 
+public | checkout_order             | table 
+public | checkout_orderlineitem     | table 
+public | django_admin_log           | table 
+public | django_content_type        | table 
+public | django_migrations          | table 
+public | django_session             | table 
+public | home_review                | table 
+public | photos_category            | table 
+public | photos_photo               | table  
+```
+
+The schemas for the relevant tables are outlines in the attached file below, or can be found in the **static/schemas** directory of this repository:
+
+[All tables text file](https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/schemas/allTables.txt)
+
+**(Please note: Some tables are omitted from the all tables file as they are handled by Django, and not specifically used in the templates for this site.)**
 
 
 # Testing
@@ -146,8 +179,8 @@ The photographer in question approach myself to design a simple site to showcase
     - This project utilise **VirtualEnv** to run a closed virtual enviroment specifically tailored for this project.
 - [Stripe](https://stripe.com/)
     - This project utilise **Stripe** to process payments, and act as a go between between the user and the bank as a payment processor.
-
-
+- [JQuery](https://jquery.com)
+    - The project uses **JQuery** to simplify DOM manipulation. 
 
 ## Software
 - [Visual Studio Code](https://code.visualstudio.com/)
@@ -160,6 +193,8 @@ The photographer in question approach myself to design a simple site to showcase
     - This project used tools in **Visio** to create, edit, and present wireframes in a more professional manner.
 
 ## Additional Resources
+- [Google Fonts](https://fonts.google.com/)
+    - The project uses **Google fonts** to style the website fonts.
 - [Foundry - ThemeForest](https://themeforest.net/item/foundry-multipurpose-html-variant-page-builder/11562108)
     - This project utilizes a regular license with **ThemeForest** with the **Foundry** template. 
 - [Themify Icons](https://themify.me/themify-icons)
@@ -170,6 +205,8 @@ The photographer in question approach myself to design a simple site to showcase
     - This project uses a **sendgrid** account to handle sending customised mails to end users.
 - [AWS S3](https://aws.amazon.com/s3/)
     - This project utilizes the **AWS S3** platform for storage of all media and static files.
+- [HTML Validator](https://validator.w3.org/)
+    - This project utilised the HTML validator provided by W3C to check and correct any issues in my current HTML code.
 
 # Deployment
 
