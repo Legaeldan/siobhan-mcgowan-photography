@@ -33,7 +33,9 @@ The photographer in question approach myself to design a simple site to showcase
         - [Login Page](#login-page)
         - [Profile Page](#account-page)
         - [Contact Page](#contact-page)
+        - [403 Page](#403-page)
         - [404 Page](#404-page)
+        - [500 Page](#500-page)
     - [**Features Left to Implement**](#features-left-to-implement)
 
 3. [**Information Architecture**](#information-architecture)
@@ -126,11 +128,26 @@ The main approach to this application is made to easy to maintain, and easy to u
 
 ### Elements on every Page
 
+- Navbar
+    - 
+
 ### Home Page
+
+<div align="center">
+    <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/multi-platform-mockup.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how home page looks on all screen sizes"/>
+</div>
 
 ### Portfolio Page
 
+<div align="center">
+    <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/portfolio.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how portfolio page looks on all screen sizes"/>
+</div>
+
 ### Product Page
+
+<div align="center">
+    <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/photoDetail.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how photo detail page looks on all screen sizes"/>
+</div>
 
 ### Cart Page
 
@@ -138,14 +155,33 @@ The main approach to this application is made to easy to maintain, and easy to u
 
 ### Register Page
 
+<div align="center">
+    <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/register.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how register page looks on all screen sizes"/>
+</div>
+
 ### Login Page
+
+<div align="center">
+    <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/login.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how login page looks on all screen sizes"/>
+</div>
 
 ### Profile Page
 
 ### Contact Page
 
+<div align="center">
+    <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/contact.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how contact page looks on all screen sizes"/>
+</div>
+
+### 403 Page
+
 ### 404 Page
 
+<div align="center">
+    <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/404.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how 404 page looks on all screen sizes"/>
+</div>
+
+### 500 Page
 
 ## Features Left to Implement
 
