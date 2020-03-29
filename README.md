@@ -167,13 +167,22 @@ The main approach to this application is made to easy to maintain, and easy to u
 
     - a **TOP** button to send the user back to the top of the page without scrolling.
 
+- Loading spinner is displayed on all pages on the main container of the page. This is displayed on every page regardless of loads times, and has a delay to give animations time to begin. This is especially noticeable on the portfolio page.
+
 ### Home Page
 
 <div align="center">
     <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/multi-platform-mockup.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how home page looks on all screen sizes"/>
 </div>
 
+- A heading banner is display with the option to change from the admin menu. The admin can set a boolean value of true to display an image as the banner. If there are multiple banners selected, the latest one will be displayed.
 
+- A small portoflio to be display in the form of featured photographs. These can be set in the admin panel under the Featured boolean value.
+    - The featured portfolio includes a slide up animation on page load.
+
+- A list of reviews from clients, which can be input in the admin panel. These can also be toggled on and off with a Featured boolean value.
+
+- A simple contact us button to route the user to the contact page.
 
 ### Portfolio Page
 
@@ -181,13 +190,33 @@ The main approach to this application is made to easy to maintain, and easy to u
     <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/portfolio.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how portfolio page looks on all screen sizes"/>
 </div>
 
+- A filter on all photos on page. This is generate from the categories of all photos displayed on the page. The filter then changes the opacity of all irrelevant photographs on the page.
+
+- A masonry style image gallery is displayed here, with watermarks on all photos. The masonry animation starts once the loader has disappeared.
+
+- All images link to their individual photo page.
+
 ### Product Page
 
 <div align="center">
     <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/photoDetail.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how photo detail page looks on all screen sizes"/>
 </div>
 
+- Display image in thumbnail format on left side of the page.
+
+- Displays photo details on the right. These include:
+    - Photo price
+    - Photo description
+    - Photo dimensions
+    - Photo ID or SKU number
+
+- An add to cart button which then adds that specific photo to the cart. If item is already in the cart, it will be refused as outlined below in the cart section.
+
+- A lightbox is applied to the image that when clicked, displays the image fullscreen in a lightbox, with easy dismissal.
+
 ### Cart Page
+
+
 
 ### Checkout Page
 
@@ -213,18 +242,29 @@ The main approach to this application is made to easy to maintain, and easy to u
 
 ### 403 Page
 
+- A simple 403 page, with a contact button and return to home button. Similar layout as the 404 page, but with altered text.
+
+- A text prompt for the user to contact should they encounter this page.
+
 ### 404 Page
 
 <div align="center">
     <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/404.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how 404 page looks on all screen sizes"/>
 </div>
 
+- A simple 404 page, with a contact button and return to home button.
+
+- A text prompt for the user to contact should they encounter this page.
+
 ### 500 Page
+
+- A simple 500 page, with a contact button and return to home button. Similar layout as the 404 page, but with altered text.
+
+- A text prompt for the user to contact should they encounter this page.
 
 ## Features Left to Implement
 
 # Information Architecture
-
 
 ## Database Choice
 
