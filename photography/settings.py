@@ -174,7 +174,3 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 EMAIL_BACKEND = 'sgbackend.SendGridBackend'
 SENDGRID_API_KEY = os.environ.get('EMAIL_HOST_PASSWORD')
-
-X_FRAME_OPTIONS = 'ALLOWALL'
-
-XS_SHARING_ALLOWED_METHODS = ['POST','GET','OPTIONS', 'PUT', 'DELETE']
