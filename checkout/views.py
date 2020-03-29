@@ -16,7 +16,7 @@ from django.views.decorators.clickjacking import xframe_options_exempt
 
 stripe.api_key = settings.STRIPE_SECRET
 
-@xframe_options_exempt
+
 @login_required()
 def checkout(request):
     if request.method=="POST":

@@ -3,12 +3,12 @@ from .models import Photo
 from django.views.decorators.clickjacking import xframe_options_exempt
 
 # Create your views here.
-@xframe_options_exempt
+
 def all_photos(request):
     photos = Photo.objects.all()
     return render(request, "photos.html", {"photos": photos})
 
-@xframe_options_exempt
+
 def photo_detail(request, pk):
     """
     Create a view that returns a single
