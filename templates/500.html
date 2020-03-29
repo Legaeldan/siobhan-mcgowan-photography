@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block page_title %}
+<title>500 internal server error - Siobhan McGowan Photography</title>
+{% endblock %}
+{% block content %}
+<section class="fullscreen" style="height: 837px;">
+    <div class="container v-align-transform">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="text-center">
+                    <i class="ti-alert icon icon-lg mb24 mb-xs-0"></i>
+                    <h1 class="large">500</h1>
+                    <h2>Internal Server Error</h2>
+                    <p>Oops, looks like something went wrong. Please send us a mail below to tell us, or try again in a couple of minutes.</p>
+                    <a class="btn white-inner" href="{% url 'index' %}">Go Back Home</a>
+                    <a class="btn white-inner" href="{% url 'contact' %}">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <!--end of row-->
+        <div class="embelish-icons">
+            <i class="ti-help-alt"></i>
+            <i class="ti-cross"></i>
+            <i class="ti-support"></i>
+            <i class="ti-announcement"></i>
+            <i class="ti-signal"></i>
+            <i class="ti-pulse"></i>
+            <i class="ti-marker"></i>
+            <i class="ti-pulse"></i>
+            <i class="ti-alert"></i>
+            <i class="ti-help-alt"></i>
+            <i class="ti-alert"></i>
+            <i class="ti-pulse"></i>
+        </div>
+    </div>
+    <!--end of container-->
+</section>
+{% endblock %}
