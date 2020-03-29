@@ -515,6 +515,15 @@ git clone https://github.com/Legaeldan/siobhan-mcgowan-photography
 
 For more help on cloning a repository on Github, please click [here](https://help.github.com/en/articles/cloning-a-repository).
 
+**Side Note:** For those using Visual Studio Code. A simplified way to run the runserver command, among other commonly user commands, can be added into the virtual environment. The easiest way to achieve this is add the below commands at the end of the **activate.bat** file found in **env\sctips\activate.bat**
+
+```
+doskey run=python manage.py runserver
+doskey static=python manage.py collectstatic
+doskey makemigrations=python manage.py makemigrations
+doskey migrate=python manage.py migrate
+```
+For each command added, these shortcuts will be added to the terminal on each launch.
 
 # Credits
 
