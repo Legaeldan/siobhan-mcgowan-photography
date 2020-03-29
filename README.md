@@ -147,7 +147,7 @@ The main approach to this application is made to easy to maintain, and easy to u
         - Portfolio
         - Contact Us
         - Profile
-        - Logout
+        - Logout (Provides a success message and redirects to the index page once logged out.)
         - Search icon with dropwdown text input.
         - Cart with dynamic badge for cart items, with dropdown to preview first three items in cart, and button to view full cart.
 
@@ -216,9 +216,33 @@ The main approach to this application is made to easy to maintain, and easy to u
 
 ### Cart Page
 
+<div align="center">
+    <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/cart.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how photo detail page looks on all screen sizes"/>
+</div>
 
+- Displays a table filled with cart contents.
+    - When there are no items in the cart, displays a non-dismissable error that there are no items in the cart
+    - When items are in the cart, displays each item on it's own row. Includes a red cross icon to remove the item from the cart, and then return the user to the updated cart.
+
+- A running total is shown on the right of the page.
+
+- A checkout button is display that calculates the total of the cart, and redirects the user to the checkout page.
+
+- The checkout button is conditional that there are items in the cart. If no items in the cart, the cart page is returned with an error.
 
 ### Checkout Page
+
+- Displays a page, with a running total of all items purchased, and a payment form.
+
+- The checkout page requires logon to view.
+
+- Running total displayed on the left of the page displays all item names, plus prices, and the total of all items in cart.
+
+- Order form is comprised of user details for billing purposes, and a stripe payment form which is tied to the stripe.js in the static directory. Payment is made, and once returned successfully, redirects to the profile page, with a success message that payment way made.
+
+- If payment is unsuccessful, returns the checkout page with an error message.
+
+- An automated delivery of purchased products is facilitated by SendGrid. Once order is completed, and email is generated with default text, and all purchased items are attached to the email, and sent to the user using the email provided during registration.
 
 ### Register Page
 
@@ -226,19 +250,41 @@ The main approach to this application is made to easy to maintain, and easy to u
     <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/register.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how register page looks on all screen sizes"/>
 </div>
 
+- Displays a basic registration page, comprising of a user name, email address, and password, with password confirmation.
+
+- If a user is currently registered using the same name, an error is attached to the page, and returned to the registration page.
+
 ### Login Page
 
 <div align="center">
     <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/login.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how login page looks on all screen sizes"/>
 </div>
 
+- Displays a basic login page using either the users email or username.
+
+- Failed logon attempt returns the user back to the login page with an error.
+
+- Successful login redirects the user back to the index page, and displays a success message that the user logged in.
+
 ### Profile Page
+
+- Displays a page which includes a table with all purchased items attached to the account.
+
+- All items can be viewed without a watermark by clicking the appropriate image, which opens the image in a new tab.
 
 ### Contact Page
 
 <div align="center">
     <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/contact.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how contact page looks on all screen sizes"/>
 </div>
+
+- Displays the contact page, which includes a map location banner.
+
+- Map location showing where the business is located, pulled from google maps, and embedded in the page. 
+
+- Left side of the page displays business details such as address and contact number and email.
+
+- Basic contact form is included, which when successful, automatically generates an email using SendGrid and send to the user. Also generates a copy to be sent to the admin.
 
 ### 403 Page
 
@@ -263,6 +309,14 @@ The main approach to this application is made to easy to maintain, and easy to u
 - A text prompt for the user to contact should they encounter this page.
 
 ## Features Left to Implement
+
+**Features that would possibly be implemented at a later date after more research are as below:**
+
+- A faster method of returning the users purchased images.
+
+- A way to change images when uploading to include the content-disposition option as attachment in the meta-data of images sent to S3. This will allow users to just download instead of view the image, and then save.
+
+- A feature to offer the users more options of one item, such as pjhysical prints and shipping. (This is not yet provided by the business.)
 
 # Information Architecture
 
