@@ -7,6 +7,12 @@
     color: #ffffff;
 }
 
+footer,
+nav {
+    position: relative;
+    z-index: 99;
+}
+
 .main-container {
     min-height: 85vh;
 }
