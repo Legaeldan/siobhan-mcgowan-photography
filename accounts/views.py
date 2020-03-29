@@ -6,16 +6,18 @@ from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from checkout.models import OrderLineItem, Order
 from django.db.models import Q
+from django.views.decorators.clickjacking import xframe_options_exempt
 
 
 # Create your views here.
+@xframe_options_exempt
 def logout(request):
     """A view that logs the user out and redirects back to the index page"""
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
     return redirect(reverse('index'))
 
-
+@xframe_options_exempt
 def login(request):
     """A view that manages the login form"""
     if request.user.is_authenticated():
@@ -45,14 +47,14 @@ def login(request):
     args = {'user_form': user_form, 'next': request.GET.get('next', '')}
     return render(request, 'login.html', args)
 
-
+@xframe_options_exempt
 @login_required
 def profile(request):
     """A view that displays the profile page of a logged in user"""
     orders_line = OrderLineItem.objects.filter(Q(order__user_name__icontains=request.user))
     return render(request, 'profile.html', {"lines": orders_line})
 
-
+@xframe_options_exempt
 def register(request):
     """A view that manages the registration form"""
     if request.method == 'POST':

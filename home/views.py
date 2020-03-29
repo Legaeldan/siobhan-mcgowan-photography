@@ -22,7 +22,8 @@ def index(request):
         return render(request, "index.html", {"photos": photos, "reviews": reviews, "banner":banner})
     except:
         return render(request, "index.html", {"photos": photos, "reviews": reviews})
-   
+
+@xframe_options_exempt
 def contact(request):
     """A simple contact page for users to contact the photographer"""
     contact_form = ContactForm()

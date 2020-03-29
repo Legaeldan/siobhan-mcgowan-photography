@@ -10,11 +10,13 @@ from django.utils import timezone
 from photos.models import Photo
 import stripe
 import requests
+from django.views.decorators.clickjacking import xframe_options_exempt
 
 # Create your views here.
 
 stripe.api_key = settings.STRIPE_SECRET
 
+@xframe_options_exempt
 @login_required()
 def checkout(request):
     if request.method=="POST":
