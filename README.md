@@ -394,7 +394,7 @@ To show the performance of the site overall. An audit was run at the final stage
  - **Planning:** A page is required for users tying incorrect URL values. 
  - **Testing (Phase 1):** The page is created, and django handles all 404 requests and redirects to the 404 template..
  - **Result:** Any attempt to access an incorrect URL redirects to the 404 page.
- - **Verdict:** Test passed as expected and delete button is now operational..
+ - **Verdict:** Test passed as expected and delete button is now operational.
 
 **All testing results can be found in the seperate [TESTING.md](https://github.com/Legaeldan/siobhan-mcgowan-photography/blob/master/data/testing/TESTING.md) file. 
 
