@@ -25,6 +25,7 @@ The photographer in question approach myself to design a simple site to showcase
     - [**Existing Features**](#existing-features)
         - [Elements on every Page](#elements-on-every-page)
         - [Home Page](#home-page)
+        - [Search Page](#search-page)
         - [Portfolio Page](#portfolio-page)
         - [Product Page](#product-page)
         - [Cart Page](#cart-page)
@@ -183,6 +184,17 @@ The main approach to this application is made to easy to maintain, and easy to u
 - A list of reviews from clients, which can be input in the admin panel. These can also be toggled on and off with a Featured boolean value.
 
 - A simple contact us button to route the user to the contact page.
+
+### Search Page
+
+<div align="center">
+    <img src="https://siobhan-mcgowan-photography.s3.eu-west-1.amazonaws.com/static/img/search.png" href="http://siobhan-mcgown-photography.herokuapp.com/" target="_blank" rel="noopener" alt="Image of how portfolio page looks on all screen sizes"/>
+</div>
+
+- A page that returns all photos based on search criteria.
+
+- Returns an error page with no results, and a search bar for user to try searching again.
+
 
 ### Portfolio Page
 
