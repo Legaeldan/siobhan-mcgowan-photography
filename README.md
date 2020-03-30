@@ -95,7 +95,7 @@ As a side goal, I have left room for expansion once I have developed my skills f
 Wireframes were built in the early stages of development to get a rough outline of the structure needed for the planned features of the site. These can be viewed below:
 
 - [Desktop & Tablet](https://github.com/Legaeldan/siobhan-mcgowan-photography/blob/master/data/wireframes/Desktop-Tablet%20App.pdf) **Note:** Wireframes are combined as same styling is used on both Desktop and Tablet.
-- [Mobile](https://github.com/Legaeldan/siobhan-mcgowan-photography/blob/master/data/wireframes/Mobile%20App.pdf) Not Complete
+- [Mobile](https://github.com/Legaeldan/siobhan-mcgowan-photography/blob/master/data/wireframes/Mobile%20App.pdf)
 
 ## Design choices
 
