@@ -29,7 +29,7 @@ The photographer in question approach myself to design a simple site to showcase
         - [Portfolio Page](#portfolio-page)
         - [Product Page](#product-page)
         - [Cart Page](#cart-page)
-        - [Checkout Page](#checkout-page)
+        - [Checkout Page](#checkout-page) *
         - [Register Page](#register-page)
         - [Login Page](#login-page)
         - [Profile Page](#account-page)
@@ -94,9 +94,8 @@ As a side goal, I have left room for expansion once I have developed my skills f
 
 Wireframes were built in the early stages of development to get a rough outline of the structure needed for the planned features of the site. These can be viewed below:
 
-- [Desktop](#) Not Complete
-- [Tablet](#) Not Complete
-- [Mobile](#) Not Complete
+- [Desktop & Tablet](https://github.com/Legaeldan/siobhan-mcgowan-photography/blob/master/data/wireframes/Desktop-Tablet%20App.pdf) **Note:** Wireframes are combined as same styling is used on both Desktop and Tablet.
+- [Mobile](https://github.com/Legaeldan/siobhan-mcgowan-photography/blob/master/data/wireframes/Mobile%20App.pdf) Not Complete
 
 ## Design choices
 
