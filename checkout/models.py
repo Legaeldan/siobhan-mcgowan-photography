@@ -3,6 +3,9 @@ from photos.models import Photo
 
 # Create your models here.
 class Order(models.Model):
+    """
+    Defines data for the order table, including billing details.
+    """
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
     user_name = models.CharField(max_length=120, blank=True)
@@ -20,6 +23,9 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    Handles the data for each line ordered by a user on the above user form.
+    """
     order = models.ForeignKey(Order, null=False)
     photo = models.ForeignKey(Photo, null=False)
 

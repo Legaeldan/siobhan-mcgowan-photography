@@ -3,6 +3,9 @@ from django.utils import timezone
 
 # Create your models here.
 class Review(models.Model):
+    """
+    Table for adding reviews to be displayed on front page.
+    """
     name = models.CharField(max_length=60)
     company = models.CharField(max_length=60, blank=True)
     description = models.TextField(max_length=180)

@@ -12,7 +12,10 @@ from django.views.decorators.clickjacking import xframe_options_exempt
 # Create your views here.
 
 def index(request):
-    """A view that displays the index page"""
+    """
+    A view that displays the index page
+    Checks for active banners and reviews.
+    """
     photos = Photo.objects.all()
     reviews = Review.objects.all()
     try:
@@ -25,7 +28,10 @@ def index(request):
 
 
 def contact(request):
-    """A simple contact page for users to contact the photographer"""
+    """
+    A simple contact page for users to contact the photographer
+    Sends a copy of the mail to the admin, and to the user to confirm.
+    """
     contact_form = ContactForm()
     if request.method == 'POST':
         try:
@@ -40,10 +46,8 @@ def contact(request):
                     "The message you sent was: %s from %s" % (form_name, form_message, sender)
             message_admin = request.POST['message']
             from_email = "SMGPhotography <"+str(os.environ.get("EMAIL_MASTER_SENDER"))+">"
-            print(from_email)
             recipient_list = [request.POST['user_email'], os.environ.get("EMAIL_MASTER_SENDER")]
             admin_email = [os.environ.get('EMAIL_MASTER_SENDER')]
-            print("Sending mail")
             email = EmailMessage(subject, message, from_email , recipient_list)
             email.send()
             messages.success(request, 'You message was sent successfully. We will be in touch shortly.')

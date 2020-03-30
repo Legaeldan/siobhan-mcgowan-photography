@@ -3,7 +3,9 @@ from .models import Order
 
 
 class MakePaymentForm(forms.Form):
-
+    """
+    Handles form for inputting card details
+    """
     MONTH_CHOICES = [(i, i) for i in range(1, 12)]
     YEAR_CHOICES = [(i, i) for i in range(2019, 2036)]
 
@@ -15,7 +17,9 @@ class MakePaymentForm(forms.Form):
 
 
 class OrderForm(forms.ModelForm):
-
+    """
+    Handles form for inputting billing details
+    """
     class Meta:
         model = Order
         fields = (

@@ -19,6 +19,14 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def checkout(request):
+    """
+    Renders checkout page with forms.
+    Checks if items are in cart before serving page.
+    If user submitting form via POST:
+    Checks if form is valid, and sends payment and amount to Stripe.
+    Returns response from Stripe to user.
+    Returns user to relevant page after payment complete.
+    """
     if request.method=="POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
@@ -79,10 +87,7 @@ def checkout(request):
             messages.error(request, "We were unable to take a payment with that card!")
     else:
         cart = request.session.get('cart', {})
-        print("Printing cart")
-        print(cart)
         if not cart:
-            print("No items in cart")
             messages.error(request, "Uh Oh, no items in cart. Please add items to cart before proceeding to payment.")
             return redirect(reverse('view_cart'))
         payment_form = MakePaymentForm()

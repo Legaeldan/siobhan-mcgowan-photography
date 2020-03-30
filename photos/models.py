@@ -4,6 +4,9 @@ import re
 
 # Create your models here.
 class Category(models.Model):
+    """
+    Table to add overall categories for photos.
+    """
     name = models.CharField(max_length=120)
     description = models.TextField()
     timestamp = models.DateTimeField(blank=True, default=timezone.now)
@@ -13,6 +16,11 @@ class Category(models.Model):
         return self.name
 
 class Photo(models.Model):
+    """
+    Table to define data for each photo item on site.
+    Includes both user pruchased photos, and previews.
+    Toggles for adding photo to banners, or in featured gallery.
+    """
     class Meta:
         ordering = ['published_date']
     name = models.CharField(max_length=150, default='Photograph')
