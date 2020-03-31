@@ -81,8 +81,8 @@ def register(request):
                 return redirect(reverse('index'))
 
             else:
-                messages.error(request, "unable to log you in at this time!")
-        return redirect(reverse('index'))
+                messages.success(request, "Account Registered! Please log in!")
+                return redirect(reverse('login'))
     else:
         user_form = UserRegistrationForm()
 
