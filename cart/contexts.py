@@ -11,7 +11,7 @@ def cart_contents(request):
     cart_items = []
     total = 0
     photo_count = 0
-    for id in cart.items():
+    for id, quantity in cart.items():
         photo = get_object_or_404(Photo, pk=id)
         total += photo.price
         photo_count += 1
