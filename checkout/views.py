@@ -60,7 +60,7 @@ def checkout(request):
                 messages.error(request, "Your card was declined!")
                 
             if customer.paid:
-                subject = 'Thank you for your order SMG Photography to our site'
+                subject = 'Thank you for your order with SMG Photography'
                 message = "Thank you %s for your order with SMG Photography." \
                           " " \
                           "Please find attached your digital prints." % (request.user.username)
@@ -82,7 +82,6 @@ def checkout(request):
             else:
                 messages.error(request, "Unable to take payment")
         else:
-            print(payment_form.errors)
             messages.error(request, "We were unable to take a payment with that card!")
     else:
         cart = request.session.get('cart', {})
