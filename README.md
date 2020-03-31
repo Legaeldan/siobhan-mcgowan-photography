@@ -522,6 +522,11 @@ git clone https://github.com/Legaeldan/siobhan-mcgowan-photography
 10. Create a folder in the root directory called **.vscode**.
 11. In the **.vscode** folder, create a file called **settings.json**
 12. Insert the below code into the settings.json file, wait for the enviroment to load (This can be seen in the lower left hand corner of VSCode).
+
+**Please note:** If you do not have a databse set up, and wish to use the inbuilt SQLite3 database, remote ``` "DATABASE_URL": "[Insert Postgres URL here]",``` from the below settings, and the system will revert to the local database.
+
+**Secondary Note:** If you wish to run in development, add the environment variable ``` "DEVELOPMENT": "True",``` and the system will revert to debugging mode.
+
 ```json
 {
   "python.pythonPath": "env\\Scripts\\python.exe",
