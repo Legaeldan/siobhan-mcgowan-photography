@@ -25,6 +25,7 @@ $(function() {
             $("#stripe-error-message").text(response.error.message);
             $("#credit-card-errors").show();
             $("#validate_card_btn").attr("disabled", false);
+            window.scrollTo(0, 0)
         }
     });
     return false;
