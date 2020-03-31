@@ -60,7 +60,6 @@ def checkout(request):
                 messages.error(request, "Your card was declined!")
                 
             if customer.paid:
-                messages.error(request, "You have successfully paid")
                 subject = 'Thank you for your order SMG Photography to our site'
                 message = "Thank you %s for your order with SMG Photography." \
                           " " \
