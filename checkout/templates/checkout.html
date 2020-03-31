@@ -4,7 +4,7 @@
 {% block page_title %}
 <title>Contact - Siobhan McGowan Photography</title>
 {% endblock %}
-{% block head_js %}
+{% block footer_js %}
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
     //<![CDATA[
@@ -50,6 +50,14 @@
                     {% endif %}
                     {% endfor %}
                     {% endif %}
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center" id="credit-card-errors" style="display: none;">
+                        <div class="alert alert-danger alert-dismissible index-danger" role="alert" id="stripe-error-message">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            {{ message }}
+                        </div>
+                        </div>
                     <div class="col-md-4">
                         <div class="text-center">
                             <h4 class="uppercase">Order Summary</h4>
@@ -80,9 +88,6 @@
                     <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
                         <h4 class="uppercase">Billing Details</h4>
                         <hr>
-                        <div id="credit-card-errors" style="display: none;">
-                            <div id="alert-message block-message error" id="stripe-error-message"></div>
-                        </div>
                         <div class="col-md-6">
                             {{ order_form | as_bootstrap }}
                         </div>
