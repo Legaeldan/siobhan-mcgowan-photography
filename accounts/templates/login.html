@@ -11,7 +11,7 @@
         <div class="container v-align-transform">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
-                    <div class="feature bordered text-center">
+                    <div class="feature bordered text-center accountform-container">
                         <h4 class="uppercase">Login Here</h4>
                         <form method="post" data-success="Thanks for your submission, we will be in touch shortly." data-error="Please fill all fields correctly." action="{% url 'login' %}?next={{ next }}" class="accountform">
                                 <fieldset class="form-group">
@@ -28,6 +28,13 @@
                                         </button>
                                         {{ message }}
                                     </div>
+                                    {% elif message.tags == 'success' %}
+                                    <div class="alert alert-success alert-dismissible" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            {{ message }}
+                                        </div>
                                 {% endif %}
                                 {% endfor %}
                             </form>
