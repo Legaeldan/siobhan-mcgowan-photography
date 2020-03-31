@@ -19,7 +19,7 @@
                         {% for message in messages %}
                         {% if message.tags == 'success' %}
                         <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-                        <div class="alert alert-success alert-dismissible index-success" role="alert">
+                        <div class="alert alert-success alert-dismissible" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -38,18 +38,6 @@
                         {% endif %}
                         {% endfor %}
                         {% endif %}
-                    <div class="col-sm-10 col-sm-offset-1">
-                            {% for message in messages %}
-                            {% if message.tags == 'success' %}
-                            <div class="alert alert-success alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                   {{ message }}
-                                </div>
-                            {% endif %}
-                            {% endfor %}
-
                             <div class="col-sm-10 col-sm-offset-1 text-center">
                                     <h4 class="uppercase">Purchased Photographs</h4>
                                     <p>
